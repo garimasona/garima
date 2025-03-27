@@ -1,0 +1,967 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEXElS</title>
+  <link rel="stylesheet" href="pexels,.css">
+  <style>
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: url('pexels-pixabay-326055.jpg') center/cover no-repeat;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for better visibility */
+        }
+
+        /* Website Name */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 8px 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+
+        /* Search Bar */
+        .search-container {
+            position: absolute;
+            top: 130px; /* Home option ke niche */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+        }
+
+        .search-box {
+            width: 100%;
+            display: flex;
+            background: white;
+            padding: 8px;
+            border-radius: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            padding: 10px 15px;
+            border: none;
+            background: #0073ff;
+            color: white;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #0056b3;
+        }
+        
+ </style>
+</head>
+<body>
+  <header>
+    <h1>Pexels</h1>
+    <br>
+    <div>
+      <img src="pexels-pixabay-326055.jpg" width="100%" height="400">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="HOME.HTML">Home</a></li>
+        <li><a href="vidio.html">Videos</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="challenges.html">Challenges</a></li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search for images or videos...">
+    </div>
+  </header>
+
+
+  <main>
+    <section id="gallery" class="grid-layout">
+      <div class="card">
+        <img src="4030.jpeg" alt="Pexels Image "  class="zoomable"   >
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="4020.jpeg" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="4040.jpg" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="4050.jpg" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="4060.jpeg" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="129.jpeg">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="4070.jpg"alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="4080.jpg" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="4010." alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image 2">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image " class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image 3">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image 2">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image 1">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+      </div>
+        <div class="card">
+          <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+          <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+        </div>
+        <div class="card">
+          <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+          <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+        </div>
+        <div class="card">
+          <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+          <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+          </div>
+          <div class="card">
+            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+            <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+          </div>
+          <div class="card">
+            <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+            <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+          </div>
+          <div class="card">
+            <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+            <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+          </div>
+          <div class="card">
+            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+            <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+          </div>
+            <div class="card">
+              <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+              <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+            </div>
+            <div class="card">
+              <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+              <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+            </div>
+            <div class="card">
+              <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+              <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+              </div>
+              <div class="card">
+                <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+              </div>
+              <div class="card">
+                <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+                <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+              </div>
+              <div class="card">
+                <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+                <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+              </div>
+              <div class="card">
+                <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+              </div>
+                <div class="card">
+                  <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+                  <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+                </div>
+                <div class="card">
+                  <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+                  <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+                </div>
+                <div class="card">
+                  <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                  <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                  </div>
+
+                  <div class="card">
+                    <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                    <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+                    <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+                    <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                    <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                  </div>
+                    <div class="card">
+                      <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+                      <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+                    </div>
+                    <div class="card">
+                      <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+                      <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+                    </div>
+                    <div class="card">
+                      <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                      <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                    </div>
+                      <div class="card">
+                        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                      </div>
+              <div class="card">
+           <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+          <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+             </div>
+          <div class="card">
+       <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+       <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+           </div>
+          <div class="card">
+         <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+         <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+              </div>
+            <div class="card">
+           <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+           <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+              </div>
+            <div class="card">
+           <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+           <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+                 </div>
+               <div class="card">
+             <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+            <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+               </div>
+           <div class="card">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+             </div>
+              <div class="card">
+               <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+              <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+                  </div>
+              <div class="card">
+             <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+             <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+                   </div>
+                 <div class="card">
+                 <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                  </div>
+                   <div class="card">
+                     <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+                   <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+                       </div>
+            <div class="card">
+              <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+              <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+         </div>
+        <div class="card">
+               <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+           <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+           </div>    
+           <div class="card">
+            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+            <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+          </div>
+          <div class="card">
+            <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+            <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+          </div>
+          <div class="card">
+            <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+            <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+          </div>
+          <div class="card">
+            <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+            <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+          </div>
+            <div class="card">
+              <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+              <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+            </div>
+            <div class="card">
+              <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+              <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+            </div>
+            <div class="card">
+              <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+              <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+              </div>
+              <div class="card">
+                <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+              </div>
+              <div class="card">
+                <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+                <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+              </div>
+              <div class="card">
+                <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+                <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+              </div>
+              <div class="card">
+                <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+              </div>
+                <div class="card">
+                  <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+                  <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+                </div>
+                <div class="card">
+                  <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+                  <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+                </div>
+                <div class="card">
+                  <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                  <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                    <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+                    <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+                    <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                    <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                  </div>
+                    <div class="card">
+                      <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+                      <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+                    </div>
+                    <div class="card">
+                      <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+                      <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+                    </div>
+                    <div class="card">
+                      <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                      <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                      </div>
+                      <div class="card">
+                        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                      </div>
+                      <div class="card">
+                        <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+                        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+                      </div>
+                      <div class="card">
+                        <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+                        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+                      </div>
+                      <div class="card">
+                        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                        <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+                      </div>
+                        <div class="card">
+                          <img src="https://source.unsplash.com/random/200x200?sig=2" alt="Pexels Image "class="zoomable">
+                          <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=2', 'Pexels Image 2')">Download</button>
+                        </div>
+                        <div class="card">
+                          <img src="https://source.unsplash.com/random/200x200?sig=3" alt="Pexels Image "class="zoomable">
+                          <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=3', 'Pexels Image 3')">Download</button>
+                        </div>
+                        <div class="card">
+                          <img src="https://source.unsplash.com/random/200x200?sig=1" alt="Pexels Image "class="zoomable">
+                          <button class="download" onclick="downloadImage('https://source.unsplash.com/random/200x200?sig=1', 'Pexels Image 1')">Download</button>
+              </div>
+      
+       </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 KlikStock - Free Stock Photos and Videos</p>
+  </footer>
+  
+  <script src="pexels,.js"></script> 
+ </body>
+ </html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
