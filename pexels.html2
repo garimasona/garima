@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pexels Clone - Videos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="hero-section">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>  <!-- Image Page Link -->
+          <li><a href="#">Videos</a></li>
+          <li><a href="#">Leaderboard</a></li>
+          <li><a href="#">Challenges</a></li>
+          <li><a href="#">Free Stock Photos</a></li>
+        </ul>
+      </nav>
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Search for videos...">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="video-gallery" class="grid-layout">
+      <video src="video1.mp4" controls></video>
+      <video src="video2.mp4" controls></video>
+      <video src="video3.mp4" controls></video>
+      <video src="video4.mp4" controls></video>
+      <!-- More videos -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Pexels Clone - Free Stock Videos</p>
+  </footer>
+
+</body>
+</html>
